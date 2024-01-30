@@ -19,8 +19,8 @@ const SelectJoke = ({ onSelectJokeApi, selectedJokeApi }: Props) => {
           value={selectedJokeApi}
           onChange={(event) => onSelectJokeApi(event.target.value)}
         >
-          <MenuItem value="DadJoke">Dad Joke</MenuItem>
           <MenuItem value="ChuckNorrisJoke">Chuch Norris Joke</MenuItem>
+          <MenuItem value="DadJoke">Dad Joke</MenuItem>
           <MenuItem value="ProgramingJoke">Programing Joke</MenuItem>
         </Select>
       </FormControl>
