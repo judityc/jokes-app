@@ -21,6 +21,7 @@ const SelectJoke = ({ onSelectJokeApi, selectedJokeApi }: Props) => {
         >
           <MenuItem value="DadJoke">Dad Joke</MenuItem>
           <MenuItem value="ChuckNorrisJoke">Chuch Norris Joke</MenuItem>
+          <MenuItem value="ProgramingJoke">Programing Joke</MenuItem>
         </Select>
       </FormControl>
     </>

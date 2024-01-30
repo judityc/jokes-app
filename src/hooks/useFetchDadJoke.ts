@@ -6,7 +6,7 @@ interface DadJoke {
   status: number;
 }
 
-export const useDadJoke = () =>
+export const useFetchDadJoke = () =>
   useData<DadJoke>("https://icanhazdadjoke.com/", {
     headers: { Accept: "application/json" },
   });

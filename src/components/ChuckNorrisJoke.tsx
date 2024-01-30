@@ -6,5 +6,4 @@ const ChuckNorrisJoke = () => {
 
   return <Joke joke={chuckJoke?.value} error={error} isLoading={isLoading} />;
 };
-
 export default ChuckNorrisJoke;
