@@ -12,13 +12,18 @@ export const useData = <T>(endpoint: string, requestOptions?: RequestInit) => {
 
     fetch(endpoint, { ...requestOptions, signal: controller.signal })
       .then((res) => {
-        if (res.status >= 400) {
-          return setError("Something went wrong...");
-        }
         return res.json();
       })
-      .then((res) => setData(res))
-      .finally(() => setIsLoading(false));
+      .then((res) => {
+        setData(res);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        if (error?.name === "AbortError") return;
+
+        setError(error?.message);
+        setIsLoading(false);
+      });
 
     return () => controller.abort();
   }, []);
