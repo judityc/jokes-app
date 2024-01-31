@@ -22,8 +22,11 @@ function App() {
 
   const JokeComponent = getJokeComponent(selectedJokeApi);
 
+  const isDevMode = import.meta.env.DEV;
+
   return (
     <AppLayout>
+      {isDevMode && <p>Dev Mode</p>}
       <SelectJoke
         onSelectJokeApi={setSelectedJokeApi}
         selectedJokeApi={selectedJokeApi}
