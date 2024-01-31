@@ -1,21 +1,8 @@
-import ChuckNorrisJoke from "./components/ChuckNorrisJoke";
-import DadJoke from "./components/DadJoke";
 import SelectJoke from "./components/SelectJoke";
 import { useState } from "react";
-import EmptyState from "./components/EmptyState";
 import AppLayout from "./components/AppLayout";
 import Card from "./components/Card";
-import ProgramingJoke from "./components/ProgramingJoke";
-import GeneralJoke from "./components/GeneralJoke";
-
-const getJokeComponent = (selectedJokeApi: string) => {
-  if (selectedJokeApi === "DadJoke") return DadJoke;
-  if (selectedJokeApi === "ChuckNorrisJoke") return ChuckNorrisJoke;
-  if (selectedJokeApi === "ProgramingJoke") return ProgramingJoke;
-  if (selectedJokeApi === "GeneralJoke") return GeneralJoke;
-
-  return EmptyState;
-};
+import { getJokeComponent } from "./utils/getJokeComponent";
 
 function App() {
   const [selectedJokeApi, setSelectedJokeApi] = useState("");
