@@ -2,7 +2,7 @@
 
 ## Description:
 
-Joke App is created to genrate joke af the day based on API of your choise. Select provides tour API options to choose from.
+Joke App is created to genrate joke of the day based on API of your choice. Select provides four API options to choose from.
 
 ## For The Future:
 
