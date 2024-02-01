@@ -21,7 +21,7 @@ const Card = ({ title, children }: Props) => {
         padding="30px"
         fontSize="3.2em"
         fontWeight="500"
-        margin="auto"
+        textAlign="center"
       >
         {title}
       </Typography>
