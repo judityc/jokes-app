@@ -8,7 +8,7 @@ interface Props {
 const SelectJoke = ({ onSelectJokeApi, selectedJokeApi }: Props) => {
   return (
     <>
-      <FormControl sx={{ m: 2, minWidth: 320 }}>
+      <FormControl >
         <InputLabel id="demo-simple-select-helper-label">
           Select Joke API
         </InputLabel>

@@ -9,7 +9,7 @@ interface Props {
 const Card = ({ title, children }: Props) => {
   return (
     <Box
-      width={600}
+      max-width={600}
       border="1px solid #4db6ac"
       borderRadius="5px"
       display="flex"

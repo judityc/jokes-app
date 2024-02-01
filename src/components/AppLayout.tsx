@@ -10,14 +10,16 @@ const AppLayout = ({ children }: Props) => {
     <Paper
       square
       sx={{
-        width: "100%",
-        height: "100vh",
+        minWidth: "100%",
+        minHeight: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Stack spacing={5}>{children}</Stack>
+      <Stack margin="0 30px" spacing={5}>
+        {children}
+      </Stack>
     </Paper>
   );
 };
