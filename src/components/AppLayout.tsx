@@ -17,7 +17,7 @@ const AppLayout = ({ children }: Props) => {
         alignItems: "center",
       }}
     >
-      <Stack margin="0 30px" spacing={5}>
+      <Stack spacing={5}>
         {children}
       </Stack>
     </Paper>

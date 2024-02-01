@@ -9,12 +9,20 @@ interface Props {
 const Card = ({ title, children }: Props) => {
   return (
     <Box
-      max-width="600px"
-      border="1px solid #4db6ac"
-      borderRadius="5px"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
+      sx={{
+        maxWidth: {
+          xs: 350, //0
+          sm: 500, //600
+          md: 700, //900
+          lg: 700, //1200
+          xl: 700, //1536
+        },
+        border: "1px solid #4db6ac",
+        borderRadius: "5px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
     >
       <Typography
         variant="h1"

@@ -1,4 +1,10 @@
 import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+const APIS = [
+  "Chuck Norris Joke",
+  "Dad Joke",
+  "General Joke",
+  "Programing Joke",
+] as const;
 
 interface Props {
   onSelectJokeApi: (joke: string) => void;
@@ -6,13 +12,6 @@ interface Props {
 }
 
 const SelectJoke = ({ onSelectJokeApi, selectedJokeApi }: Props) => {
-  const APIs = [
-    "Chuck Norris Joke",
-    "Dad Joke",
-    "General Joke",
-    "Programing Joke",
-  ];
-
   return (
     <>
       <FormControl>
@@ -26,7 +25,7 @@ const SelectJoke = ({ onSelectJokeApi, selectedJokeApi }: Props) => {
           value={selectedJokeApi}
           onChange={(event) => onSelectJokeApi(event.target.value)}
         >
-          {APIs.map((api) => (
+          {APIS.map((api) => (
             <MenuItem value={api} key={api}>
               {api}
             </MenuItem>
