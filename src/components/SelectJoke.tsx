@@ -6,9 +6,16 @@ interface Props {
 }
 
 const SelectJoke = ({ onSelectJokeApi, selectedJokeApi }: Props) => {
+  const APIs = [
+    "Chuch Norris Joke",
+    "Dad Joke",
+    "General Joke",
+    "Programing Joke",
+  ];
+
   return (
     <>
-      <FormControl >
+      <FormControl>
         <InputLabel id="demo-simple-select-helper-label">
           Select Joke API
         </InputLabel>
@@ -19,10 +26,11 @@ const SelectJoke = ({ onSelectJokeApi, selectedJokeApi }: Props) => {
           value={selectedJokeApi}
           onChange={(event) => onSelectJokeApi(event.target.value)}
         >
-          <MenuItem value="ChuckNorrisJoke">Chuch Norris Joke</MenuItem>
-          <MenuItem value="DadJoke">Dad Joke</MenuItem>
-          <MenuItem value="GeneralJoke">General Joke</MenuItem>
-          <MenuItem value="ProgramingJoke">Programing Joke</MenuItem>
+          {APIs.map((api) => (
+            <MenuItem value={api} key={api}>
+              {api}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </>
