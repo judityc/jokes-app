@@ -7,7 +7,7 @@ interface Props {
 
 const SelectJoke = ({ onSelectJokeApi, selectedJokeApi }: Props) => {
   const APIs = [
-    "Chuch Norris Joke",
+    "Chuck Norris Joke",
     "Dad Joke",
     "General Joke",
     "Programing Joke",
