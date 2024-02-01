@@ -9,6 +9,5 @@ Joke App is created to genrate joke of the day based on API of your choice. Sele
 ## For The Future:
 
 TODO:
-- Add mobile support
 - Implement previous and next joke functionality
 
