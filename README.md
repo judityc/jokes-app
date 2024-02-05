@@ -4,7 +4,7 @@
 
 ## Description:
 
-- Joke App is created to genrate joke of the day based on API of your choice. 
+- Joke App is created to generate joke of the day based on API of your choice. 
 
 ![Alt text](Readme-img/app-img.png)
 - Select provides four API options to choose from. 
@@ -15,8 +15,10 @@
 ![Alt text](Readme-img/app-joke.png)
 - Mobile version can also be used
 
-## For The Future:
+## Technologies Used: 
+For styling React components `Material UI` library was used. 
 
+## For The Future:
 TODO:
 - Implement previous and next joke functionality
 
