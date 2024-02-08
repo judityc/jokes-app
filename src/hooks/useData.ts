@@ -5,12 +5,10 @@ export const useData = <T>(endpoint: string, requestOptions?: RequestInit) => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const controller = new AbortController();
-
+  function fetchJoke(signal?: AbortSignal) {
     setIsLoading(true);
 
-    fetch(endpoint, { ...requestOptions, signal: controller.signal })
+    fetch(endpoint, { ...requestOptions, signal})
       .then((res) => {
         return res.json();
       })
@@ -24,9 +22,15 @@ export const useData = <T>(endpoint: string, requestOptions?: RequestInit) => {
         setError(error?.message);
         setIsLoading(false);
       });
+  }
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetchJoke(controller.signal);
 
     return () => controller.abort();
   }, []);
 
-  return { data, error, isLoading };
+  return { data, error, isLoading, fetchJoke };
 };

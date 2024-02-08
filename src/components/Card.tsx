@@ -31,7 +31,7 @@ const Card = ({ title, children }: Props) => {
       >
         {title}
       </Typography>
-      <Box padding="30px" minHeight="100px">
+      <Box padding="30px" minHeight="130px">
         {children}
       </Box>
     </Box>
