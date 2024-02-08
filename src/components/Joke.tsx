@@ -2,7 +2,7 @@ import { Box, CircularProgress } from "@mui/material";
 import { TextH5 } from "./styledComponents";
 import Buttons from "./Buttons";
 import { useState } from "react";
-import styles from "./Joke.module.css"
+import styles from "./Joke.module.css";
 
 interface Props {
   error: string;
@@ -13,6 +13,7 @@ interface Props {
 
 const Joke = ({ error, joke, isLoading, fetchJoke }: Props) => {
   const [jokesArr, setJokesArr] = useState<string[]>([]);
+  const [clickedBack, setClickedBack] = useState(0);
   console.log(jokesArr);
 
   if (isLoading) {
@@ -28,10 +29,17 @@ const Joke = ({ error, joke, isLoading, fetchJoke }: Props) => {
   if (joke) {
     return (
       <>
-        <TextH5 variant="h5">{joke}</TextH5>
+        <TextH5 variant="h5">
+          {clickedBack
+            ? jokesArr[Math.max(0, jokesArr.length - clickedBack)]
+            : joke}
+        </TextH5>
         <Box className={styles.container}>
           <Buttons
-            onClickBack={() => console.log("Back")}
+            disabled={clickedBack === jokesArr.length}
+            onClickBack={() => {
+              setClickedBack(clickedBack + 1);
+            }}
             onClickNext={() => {
               setJokesArr((prevJokesArr) => [...prevJokesArr, joke]);
               fetchJoke();
