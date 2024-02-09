@@ -21,4 +21,4 @@ For styling React components `Material UI` library was used.
 
 ## For The Future:
 TODO:
-- Implement previous and next joke functionality
+- [X] ~Implement previous and next joke functionality~
