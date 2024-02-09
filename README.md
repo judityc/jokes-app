@@ -11,10 +11,9 @@
   
 ![Readme-img/app-select.png](https://github.com/judityc/jokes-app/assets/123310773/f4086183-ea49-4bcd-b97e-9dcae07ed86d)
 - Based on selected API joke appears on screen.
+- Buttons functionality allows to toggle jokes back and forth.
 
-![Readme-img/app-joke.png](https://github.com/judityc/jokes-app/assets/123310773/7df6fb21-e256-480a-b2cd-6f56fcd258ba)
-- Mobile version can also be used
-
+![Readme-img/app-joke.png](https://github.com/judityc/jokes-app/assets/123310773/60c6becf-833d-4947-aafe-99b9ca014ac3)
 
 ## Technologies Used: 
 For styling React components `Material UI` library was used. 
