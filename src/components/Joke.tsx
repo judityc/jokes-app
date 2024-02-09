@@ -6,15 +6,29 @@ import styles from "./Joke.module.css";
 
 interface Props {
   error: string;
-  joke?: string;
+  jokes: string[];
   isLoading: boolean;
-  fetchJoke: (signal?: AbortSignal) => void;
+  fetchJoke: (signal?: AbortSignal) => Promise<void>;
 }
 
-const Joke = ({ error, joke, isLoading, fetchJoke }: Props) => {
-  const [jokesArr, setJokesArr] = useState<string[]>([]);
-  const [clickedBack, setClickedBack] = useState(0);
-  console.log(jokesArr);
+const Joke = ({ error, jokes, isLoading, fetchJoke }: Props) => {
+  const [jokeIndex, setJokeIndex] = useState(0);
+  console.log({ jokes, jokeIndex });
+
+  function handleClickBack() {
+    setJokeIndex(jokeIndex - 1);
+  }
+
+  function handleClickNext() {
+    setJokeIndex((prevIndex) => {
+      const currentIndex = prevIndex + 1;
+
+      if (jokes.length === currentIndex) {
+        fetchJoke();
+      }
+      return currentIndex;
+    });
+  }
 
   if (isLoading) {
     return (
@@ -26,24 +40,15 @@ const Joke = ({ error, joke, isLoading, fetchJoke }: Props) => {
   if (error) {
     return <TextH5 variant="h5">{error}</TextH5>;
   }
-  if (joke) {
+  if (jokes) {
     return (
       <>
-        <TextH5 variant="h5">
-          {clickedBack
-            ? jokesArr[Math.max(0, jokesArr.length - clickedBack)]
-            : joke}
-        </TextH5>
+        <TextH5 variant="h5">{jokes[jokeIndex]}</TextH5>
         <Box className={styles.container}>
           <Buttons
-            disabled={clickedBack === jokesArr.length}
-            onClickBack={() => {
-              setClickedBack(clickedBack + 1);
-            }}
-            onClickNext={() => {
-              setJokesArr((prevJokesArr) => [...prevJokesArr, joke]);
-              fetchJoke();
-            }}
+            disabled={jokeIndex === 0}
+            onClickBack={handleClickBack}
+            onClickNext={handleClickNext}
           />
         </Box>
       </>

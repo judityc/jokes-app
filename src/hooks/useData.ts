@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 
 export const useData = <T>(endpoint: string, requestOptions?: RequestInit) => {
-  const [data, setData] = useState<T>();
+  const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  function fetchJoke(signal?: AbortSignal) {
+  async function fetchJoke(signal?: AbortSignal) {
     setIsLoading(true);
 
-    fetch(endpoint, { ...requestOptions, signal})
+    fetch(endpoint, { ...requestOptions, signal })
       .then((res) => {
         return res.json();
       })
       .then((res) => {
-        setData(res);
+        setData((prevData) => [...prevData, res]);
         setIsLoading(false);
       })
       .catch((error) => {
